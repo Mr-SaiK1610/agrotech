@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Applications - Beauty Industry</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #f5f5f5;
+        }
+
+        header {
+            background-color: #e91e63; /* Pink color for beauty theme */
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        .container {
+            flex: 1;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .box {
+            background-color: white;
+            border-radius: 12px;
+            padding: 20px;
+            width: 280px; /* Fixed width for boxes */
+            margin: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .box:hover {
+            transform: scale(1.02);
+        }
+
+        img {
+            max-width: 100%;
+            border-radius: 12px;
+            margin-bottom: 15px;
+        }
+
+        button {
+            background-color: #e91e63; /* Match header color */
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            margin-top: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 1rem;
+        }
+
+        button:hover {
+            background-color: #c2185b; /* Darker shade on hover */
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .box {
+                width: auto; /* Allow it to stretch */
+                margin: 10px auto; /* Center align */
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>WELCOME TO SUGARCANE PLANTATIONS</h1>
+</header>
+
+<div class="container">
+    <div class="box">
+        <h2>Saccharum officinarum</h2>
+        <img src="https://s3-us-west-2.amazonaws.com/ntbgmeettheplants/images/600h/1558.jpg" alt="Hairstylist">
+        <p>Opening hours: 10 AM to 9 PM</p>
+        <button onclick="location.href='https://www.google.com/maps/search/sugarcane+plantations/@10.8558634,118.6185451,3z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D'">Location</button>
+        <button class="button" onclick="location.href='reg.html'">register</button>
+            <button onclick="location.href='logistics.html'">logistics details</button>
+            <button onclick="location.href='payment details.html'">payment details</button>
+    </div>
+
+    <div class="box">
+        <h2>Wild sugarcane</h2>
+        <img src="https://www.jircas.go.jp/sites/default/files/thaivege/087B_4.jpg" alt="Barber">
+        <p>Opening hours: 10 AM to 9 PM</p>
+        <button onclick="location.href='https://www.google.com/maps/search/sugarcane+plantations/@10.8558634,118.6185451,3z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D'">Location</button>
+        <button onclick="location.href='reg.html'">Register</button>
+        <button onclick="location.href='logistics.html'">logistics details</button>
+    </div>
+
+    <div class="box">
+        <h2>Saccharum edule</h2>
+        <img src="https://thumbs.dreamstime.com/b/saccharum-edule-also-known-as-terubuk-duruka-fiji-asparagus-dule-pitpit-naviso-saccharum-edule-also-known-as-terubuk-duruka-fiji-237545807.jpg" alt="Makeup Artist">
+        <p>Opening hours: 10 AM to 9 PM</p>
+        <button onclick="location.href='https://www.google.com/maps/search/sugarcane+plantations/@10.8558634,118.6185451,3z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D'">Location</button>
+        <button onclick="location.href='reg.html'">Register</button>
+        <button onclick="location.href='logistics.html'">logistics details</button>
+    </div>
+
+    <div class="box">
+        <h2>Tripidium ravennae</h2>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTV-8Q4nskP2WytWQS_gurVezQREXquA6P8Aw&s" alt="Pedicurist">
+        <p>Opening hours: 10 AM to 9 PM</p>
+        <button onclick="location.href='https://www.google.com/maps/search/sugarcane+plantations/@10.8558634,118.6185451,3z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D'">Location</button>
+        <button onclick="location.href='reg.html'">Register</button>
+        <button onclick="location.href='logistics.html'">logistics details</button>
+    </div>
+
+    <div class="box">
+        <h2>Saccharum barberi</h2>
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgosO6UFpANycqh4ik13baKr9s8WjN3reLWqWq1BHVDBtRC7_8zbuYZuYBhHPMNnylofIfJQELW0VLc1DIYKPfFofdqoAnSpAeAP9P1Oz6YmTCNOu6Ec02cR7KAXcvcGKC5lvxh8Rz5a6yW/s1600/01300000231569121961653233918_s.jpg" alt="Waxing Specialist">
+        <p>Opening hours: 10 AM to 9 PM</p>
+        <button onclick="location.href='https://www.google.com/maps/search/sugarcane+plantations/@10.8558634,118.6185451,3z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D'">Location</button>
+        <button onclick="location.href='reg.html'">Register</button>
+        <button onclick="location.href='logistics.html'">logistics details</button>
+    </div>
+
+</div>
+
+</body>
+</html>
+

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Login and Registration Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #f6f5f7;
+        }
+
+        h1 {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 14px;
+            color: #333;
+            margin: 20px 0;
+        }
+
+        a {
+            color: #333;
+            font-size: 14px;
+            text-decoration: none;
+            margin: 15px 0;
+        }
+
+        a:hover {
+            color: #ff4b2b;
+        }
+
+        /* Container Styles */
+        .container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+            width: 900px;
+            max-width: 100%;
+            min-height: 500px;
+            display: flex;
+            overflow: hidden;
+        }
+
+        .form-container {
+            padding: 50px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .form-container h1 {
+            font-size: 24px;
+            color: #333;
+        }
+
+        .form-container input {
+            background-color: #eee;
+            border: none;
+            padding: 12px 15px;
+            margin: 10px 0;
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .form-container button {
+            border-radius: 20px;
+            border: 1px solid #ff4b2b;
+            background-color: #ff4b2b;
+            color: #fff;
+            font-size: 14px;
+            font-weight: bold;
+            padding: 12px 45px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: transform 80ms ease-in;
+        }
+
+        .form-container button:hover {
+            background-color: #ff3b1b;
+        }
+
+        .social-icons {
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .social-icons a {
+            height: 40px;
+            width: 40px;
+            border: 1px solid #ddd;
+            margin: 0 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            background-color: #ff4b2b;
+            color: white;
+        }
+
+        /* Toggle Panel */
+        .toggle-container {
+            background-color: #ff4b2b;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 50px;
+        }
+
+        .toggle-container button {
+            background-color: transparent;
+            border: 2px solid white;
+            padding: 12px 45px;
+            margin-top: 20px;
+            color: white;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .toggle-container {
+                padding: 30px;
+            }
+
+            .toggle-container button {
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container" id="container">
+    <div class="form-container" id="signInForm">
+        <form>
+            <h1>Sign In</h1>
+            <div class="social-icons">
+                <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+                <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
+                <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+            <span>or use your email account</span>
+            <input type="email" placeholder="Email" id="signInEmail">
+            <input type="password" placeholder="Password" id="signInPassword">
+            <a href="#">Forgot your password?</a>
+            <button type="button" onclick="signIn()">Login</button>
+
+          
+        </form>
+    </div>
+    
+    <div class="toggle-container">
+        <h1>Hello, Friend!</h1>
+        <p>New here? Create an account to get started.</p>
+        <button id="signUpBtn" onclick="toggleForm()">Sign Up</button>
+    </div>
+
+    <div class="form-container" id="signUpForm" style="display:none;">
+        <form>
+            <h1>Create Account</h1>
+            <div class="social-icons">
+                <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+                <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
+                <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+            <span>or use your email for registration</span>
+            <input type="text" placeholder="Name" id="signUpName">
+            <input type="email" placeholder="Email" id="signUpEmail">
+            <input type="password" placeholder="Password" id="signUpPassword">
+            <button type="button" onclick="signUp()">Sign Up</button>
+
+        </form>
+    </div>
+</div>
+
+<script>
+    const container = document.getElementById('container');
+    const signUpForm = document.getElementById('signUpForm');
+    const signInForm = document.getElementById('signInForm');
+
+    function toggleForm() {
+        if (signUpForm.style.display === "none") {
+            signUpForm.style.display = "block";
+            signInForm.style.display = "none";
+        } else {
+            signUpForm.style.display = "none";
+            signInForm.style.display = "block";
+        }
+    }
+
+    function signUp() {
+    const name = document.getElementById('signUpName').value;
+    const email = document.getElementById('signUpEmail').value;
+    const password = document.getElementById('signUpPassword').value;
+
+    if (!name || !email || !password) {
+        alert("Please fill in all fields!");
+        return;
+    }
+
+    // Make a POST request to the backend
+    fetch('http://localhost:3000/api/signup', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name, email, password }),
+    })
+    .then(response => response.json())
+    .then(data => {
+        alert(data.message);
+        if (data.message === 'Account Created Successfully!') {
+            window.location.href = 'org.html'; // Redirect to nextPage.html
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('Error creating account');
+    });
+    window.location.href = 'org.html'; // Redirect to org.html
+
+    }
+
+    function signIn() {
+    const email = document.getElementById('signInEmail').value;
+    const password = document.getElementById('signInPassword').value;
+
+    if (!email || !password) {
+        alert("Please enter email and password!");
+        return;
+    }
+
+    // Make a POST request to the backend
+    fetch('http://localhost:3000/api/signin', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, password }),
+    })
+    .then(response => response.json())
+    .then(data => {
+        alert(data.message);
+        if (data.message === 'Signed In Successfully!') {
+            window.location.href = 'org.html'; // Redirect to org.html
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('Error signing in');
+    });
+ window.location.href = 'time.html'; // Redirect to nextPage.html
+
+    }
+</script>
+
+</body>
+</html>

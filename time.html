@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title><HOME</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #faf0ff;
+        }
+
+        header {
+            background-color: #4c9baf;
+            color: rgb(12, 3, 3);
+            padding: 15px;
+            text-align: center;
+        }
+        .relative-container {
+        position: relative; /* Set the parent to relative */
+        height: 300px;     /* Define a height for the container */
+    }
+    
+    .logo {
+        position: absolute; /* Position the logo absolutely */
+        top: 20px;         /* Adjust vertical position */
+        left: 20px;        /* Adjust horizontal position */
+    }
+    
+    .logo img {
+        width: 150px; /* Set logo size */
+    }
+        .slider-container {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            height: auto;
+        }
+
+        .flex-container {
+            display: flex;
+            transition: transform 0.5s ease;
+            padding: 20px;
+            background-color: #f0f0f0;
+            width: calc(100% * 4); /* Adjust for number of items */
+        }
+
+        .flex-container .box {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            padding: 20px;
+            width: 25%; /* Adjust based on the number of visible boxes */
+            margin: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            flex: 0 0 25%; /* 4 boxes visible at a time, adjust percentage accordingly */
+        }
+
+        img {
+            max-width: 30%;
+            height: auto;
+        }
+
+
+        /* Navigation Buttons */
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            border: none;
+            z-index: 1;
+        }
+
+        .prev {
+            left: 0;
+        }
+
+        .next {
+            right: 0;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            width: 100%;
+        }
+
+        /* Media query for smaller screens */
+        @media (max-width: 768px) {
+            .flex-container .box {
+                width: 45%;
+                flex: 0 0 45%; /* Show 2 boxes at a time */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .flex-container .box {
+                width: 100%;
+                flex: 0 0 100%; /* Show 1 box at a time */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>FARMER'S PLOT</h1> 
+            
+    </header>
+
+    <!-- Slider Container -->
+    <div class="slider-container">
+        <button class="prev" onclick="slide(-1)">&#10094;</button>
+        <div class="flex-container">
+            <div class="box">
+                <h2>Rice</h2>
+                <p>This platform provides all the Rice plantations all over the world.</p>
+                <img src="https://sayedzahurahmed.com/wp-content/uploads/2024/10/organic-rice.jpg" alt="Delicious pancakes served with syrup">
+                <button class="button" onclick="location.href='rice.html'">more details</button>
+                
+            </div>
+            <div class="box">
+                <h2>Wheat</h2>
+                <p>This platform provides all the wheat plantations all over the world.</p>
+                <img src="https://media.istockphoto.com/id/1673457545/photo/farmer-examining-ripe-ear-of-wheat-in-field-before-the-harvest.jpg?s=612x612&w=0&k=20&c=sG-Ro-n-3FmkmbXmWtwpxzYN1kJNMb5x0DbSmzITdVM=" alt="Home tuition services">
+                <button class="button" onclick="location.href='wheat.html'">more details</button>
+            </div>
+            <div class="box">
+                <h2>Rubber</h2>
+                <p>This platform provides all the rubber plantations plantations all over the world.</p>
+                <img src="https://media.istockphoto.com/id/480691906/photo/rubber-latex-collected-in-bowl.jpg?s=612x612&w=0&k=20&c=F_VzQcYBG7NiIIbr2X_YBABFQ75oGOaBkayqyjngD9w=" alt="pet caring">
+                <button class="button" onclick="location.href='rubber.html'">more details</button>
+            </div>
+            <div class="box">
+                <h2>Tea</h2>
+                <p>This platform provides all the Tea plantations all over the world.</p>
+                <img src="https://static5.depositphotos.com/1000528/521/i/450/depositphotos_5218212-stock-photo-tea-bud-and-leaves.jpg" alt="Construction services">
+                <button class="button" onclick="location.href='tea.html'">more details</button>
+            </div>
+            <div class="box">
+                <h2>Coffee </h2>
+                <p>This platform provides all the Coffee plantations all over the world.</p>
+                <img src="https://img.freepik.com/free-photo/fresh-coffee-steams-wooden-table-close-up-generative-ai_188544-8923.jpg?semt=ais_hybrid" alt="Construction services">
+                <button class="button" onclick="location.href='coffee.html'">more details</button>
+            </div>
+            <div class="box">
+                <h2>Sugarcane</h2>
+                <p>This platform provides all the Sugarcane plantations all over the world.</p>
+                <img src="https://t4.ftcdn.net/jpg/04/89/06/83/360_F_489068344_KEuO8xrTDXq1U7N5neU0S1IBdqsTaFEq.jpg" alt="Beauticians">
+                <button class="button" onclick="location.href='sugarcane.html'">more details</button>
+            </div>
+            <div class="box">
+                <h2>Cotton</h2>
+                <p>This platform provides all the cotton plantations all over the world.</p>
+                <img src="https://img.jagranjosh.com/1812021/iStock-589121090.webp" alt="Beauticians">
+                <button class="button" onclick="location.href='cotton.html'">more details</button>
+            </div>
+        </div>
+       
+        <button class="next" onclick="slide(1)">&#10095;</button>
+    </div>
+    
+</div>
+</div>
+       
+        
+    <footer>
+        <p>CONTACT US</p>
+        <p>EMAIL:student@gmail.com</p>
+        <p>CONTACT NUMBER: 4532178905</p>
+        <p> POCKET TASK MOBILE APP</p> 
+        <p>© [2024]. All rights reserved. </p>
+        <img src="https://img.icons8.com/?size=48&id=ho8QlOYvMuG3&format=png" alt="Logo"> <img src="https://img.icons8.com/?size=48&id=ClbD5JTFM7FA&format=png" alt="Logo"> <img src="https://img.icons8.com/?size=48&id=13912&format=png" alt="Logo"><img src="https://img.icons8.com/?size=48&id=Xy10Jcu1L2Su&format=png" alt="Logo">
+    </footer>
+
+    <script>
+        let currentIndex = 0;
+
+        function slide(direction) {
+            const container = document.querySelector('.flex-container');
+            const boxWidth = document.querySelector('.box').offsetWidth + 20; // Adding margin space
+            const containerWidth = container.scrollWidth;
+            const visibleWidth = container.parentElement.offsetWidth;
+
+            // Adjust current index
+            currentIndex += direction;
+
+            // Prevent sliding out of bounds
+            const maxIndex = Math.floor(containerWidth / boxWidth) - Math.floor(visibleWidth / boxWidth);
+
+            if (currentIndex < 0) currentIndex = 0;
+            if (currentIndex > maxIndex) currentIndex = maxIndex;
+
+            // Apply the sliding effect
+            container.style.transform = `translateX(${-currentIndex * boxWidth}px)`;
+        }
+
+        function alertMessage(sectionName) {
+            alert("catering: 1.kolan ragav reddy 2.kgr convention 3.kr function hall");
+        }
+    </script>
+    
+
+   
+    </script>
+
+</body>
+</html>

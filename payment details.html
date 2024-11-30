@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Details Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .payment-form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+        }
+        .payment-form h2 {
+            margin-bottom: 20px;
+            text-align: center;
+            color: #333;
+        }
+        .input-group, .payment-options {
+            margin-bottom: 15px;
+        }
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .payment-options button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background: #f9f9f9;
+            cursor: pointer;
+        }
+        .payment-options button:hover {
+            background: #eaeaea;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .btn:hover {
+            background: #45a049;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <form class="payment-form" id="paymentForm">
+        <h2>Payment Details</h2>
+        <div class="payment-options">
+            <button type="button" onclick="showPaymentOptions('online')">Online Payment</button>
+            <button type="button" onclick="showPaymentOptions('cod')">Cash on Delivery</button>
+        </div>
+
+        <!-- Online Payment Options -->
+        <div id="onlinePaymentOptions" class="hidden">
+            <label for="paymentMethod">Choose Payment Method:</label>
+            <select id="paymentMethod" onchange="showPaymentForm()" required>
+                <option value="">Select an option</option>
+                <option value="debit">Debit Card</option>
+                <option value="credit">Credit Card</option>
+                <option value="upi">UPI</option>
+            </select>
+        </div>
+
+        <!-- Debit/Credit Card Form -->
+        <div id="cardForm" class="hidden">
+            <div class="input-group">
+                <label for="cardholderName">Cardholder Name</label>
+                <input type="text" id="cardholderName" placeholder="John Doe">
+            </div>
+            <div class="input-group">
+                <label for="cardNumber">Card Number</label>
+                <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456">
+            </div>
+            <div class="input-group">
+                <label for="expiryDate">Expiry Date</label>
+                <input type="text" id="expiryDate" placeholder="MM/YY">
+            </div>
+            <div class="input-group">
+                <label for="cvv">CVV</label>
+                <input type="password" id="cvv" placeholder="123">
+            </div>
+        </div>
+
+        <!-- UPI Form -->
+        <div id="upiForm" class="hidden">
+            <div class="input-group">
+                <label for="upiId">UPI ID</label>
+                <input type="text" id="upiId" placeholder="example@upi">
+            </div>
+        </div>
+
+        <!-- Cash on Delivery -->
+        <div id="codOption" class="hidden">
+            <p>Cash on Delivery selected. No additional details are required.</p>
+        </div>
+
+        <button type="button" class="btn" onclick="processPayment()">Submit Payment</button>
+    </form>
+
+    <script>
+        function showPaymentOptions(option) {
+            document.getElementById('onlinePaymentOptions').classList.add('hidden');
+            document.getElementById('cardForm').classList.add('hidden');
+            document.getElementById('upiForm').classList.add('hidden');
+            document.getElementById('codOption').classList.add('hidden');
+
+            if (option === 'online') {
+                document.getElementById('onlinePaymentOptions').classList.remove('hidden');
+            } else if (option === 'cod') {
+                document.getElementById('codOption').classList.remove('hidden');
+            }
+        }
+
+        function showPaymentForm() {
+            const method = document.getElementById('paymentMethod').value;
+            document.getElementById('cardForm').classList.add('hidden');
+            document.getElementById('upiForm').classList.add('hidden');
+
+            if (method === 'debit' || method === 'credit') {
+                document.getElementById('cardForm').classList.remove('hidden');
+            } else if (method === 'upi') {
+                document.getElementById('upiForm').classList.remove('hidden');
+            }
+        }
+
+        function processPayment() {
+            const method = document.getElementById('paymentMethod').value;
+
+            if (document.getElementById('codOption').classList.contains('hidden') && !method) {
+                alert('Please select a payment method.');
+                return;
+            }
+
+            alert('Payment processed successfully!');
+        }
+    </script>
+</body>
+</html>

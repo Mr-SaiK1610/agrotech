@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Roles: Chef, Sous Chef, Waiter</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #faf0ff;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .slider-container {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            height: auto;
+        }
+
+        .flex-container {
+            display: flex;
+            transition: transform 0.5s ease;
+            padding: 34px;
+            background-color: #f0f0f0;
+            width: calc(100% * 4);
+        }
+
+        .flex-container .box {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            padding: 40px;
+            width: 35%;
+            margin: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            flex: 0 0 25%;
+        }
+
+        img {
+            max-width: 30%;
+            height: auto;
+        }
+
+        /* Navigation Buttons */
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            border: none;
+            z-index: 1;
+        }
+
+        /* Roles Styling */
+        .roles {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .role {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 20px;
+            width: 30%;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .role button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+    </style>
+    <script>
+        // Chef, Sous Chef, Waiter actions
+        function chefAction() {
+            alert("The Chef is preparing a gourmet dish!");
+        }
+
+        function sousChefAction() {
+            alert("The Sous Chef is assisting with chopping and prepping!");
+        }
+
+        function waiterAction() {
+            alert("The Waiter is serving the guests!");
+        }
+    </script>
+</head>
+<body>
+
+<header>
+    <h1>WELCOME TO RICE PLANTATIONS</h1>
+</header>
+
+<!-- Main Content -->
+<div class="roles">
+    <div class="role">
+        <h2>Basmati</h2>
+        <img src="https://5.imimg.com/data5/SELLER/Default/2023/7/329095190/EZ/XW/SQ/188046447/long-grain-rice-500x500.jpg" alt="Chef Image">
+        <p>The head chef is responsible for creating the menu and cooking the food.</p>
+        <button onclick="location.href='reg.html'">Register</button>
+        <button onclick="location.href='logistics.html'">logistics details</button>
+        <button onclick="location.href='payment details.html'">payment details</button>
+        
+    </div>
+    <div class="role">
+        <h2>Brown rice</h2>
+        <img src="https://naturebiofoods.organic/wp-content/uploads/2020/11/Organic-Medium-Grain-Brown-Rice-2.jpg" alt="Sous Chef Image">
+        <p>The sous chef assists the head chef with daily kitchen operations.</p>
+        <button onclick="location.href='reg.html'">Register</button>
+        <button onclick="location.href='logistics.html'">logistics details</button>
+        <button onclick="location.href='payment details.html'">payment details</button>
+        
+    </div>
+    <div class="role">
+        <h2>Jasmine rice</h2>
+        <img src="https://tiimg.tistatic.com/fp/1/005/524/long-grain-jasmine-rice-272.jpg" alt="Waiter Image">
+        <p>The waiter serves the dishes and ensures customer satisfaction.</p>
+        <button onclick="location.href='reg.html'">Register</button>
+        <button onclick="location.href='logistics.html'">logistics details</button>
+        <button onclick="location.href='payment details.html'">payment details</button>
+        
+    </div>
+    <div class="role">
+        <h2>Arborio rice</h2>
+        <img src="https://5.imimg.com/data5/SELLER/Default/2024/5/415710866/GF/DT/ZV/122961634/aromatic-paddy-rice-500x500.jpg" alt="Waiter Image">
+        <p>The waiter serves the dishes and ensures customer satisfaction.</p>
+        <button onclick="location.href='reg.html'">Register</button>
+        <button onclick="location.href='logistics.html'">logistics details</button>
+        <button onclick="location.href='payment details.html'">payment details</button>
+        
+    </div>
+    <div class="role">
+        <h2>Wild rice</h2>
+        <img src="https://img.freepik.com/premium-photo/closeup-mixed-wild-rice-grains_616001-26197.jpg" alt="Waiter Image">
+        <p>The waiter serves the dishes and ensures customer satisfaction.</p>
+        <button onclick="location.href='reg.html'">Register</button>
+        <button onclick="location.href='logistics.html'">logistics details</button>
+        <button onclick="location.href='payment details.html'">payment details</button>
+        
+    </div>
+</div>
+
+
+</body>
+</html>
+

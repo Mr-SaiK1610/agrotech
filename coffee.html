@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H.S</title>
+    <style>
+        body {
+             margin: 0;
+             font-family: Arial, sans-serif;
+             display: flex;
+             flex-direction: column;
+             min-height: 100vh;
+             background-color: #faf0ff;
+         }
+ 
+         header {
+             background-color: #4CAF50;
+             color: white;
+             padding: 15px;
+             text-align: center;
+             
+         }
+ 
+         .slider-container {
+             position: relative;
+             overflow: hidden;
+             width: 100%;
+             height: auto;
+         }
+ 
+         .flex-container {
+             display: flex;
+             transition: transform 0.5s ease;
+             padding: 34px;
+             background-color: #f0f0f0;
+             width: calc(100% * 4); /* Adjust for number of items */
+         }
+ 
+         .flex-container .box {
+             background-color: #ffffff;
+             border: 1px solid #ddd;
+             padding: 40px;
+             width: 35%; /* Adjust based on the number of visible boxes */
+             margin: 10px;
+             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+             text-align: center;
+             flex: 0 0 25%; /* 4 boxes visible at a time, adjust percentage accordingly */
+         }
+ 
+         img {
+             max-width: 30%;
+             height: auto;
+         }
+ 
+         /* Navigation Buttons */
+         .prev, .next {
+             position: absolute;
+             top: 50%;
+             transform: translateY(-50%);
+             background-color: #333;
+             color: white;
+             padding: 10px;
+             cursor: pointer;
+             border: none;
+             z-index: 1;
+         }
+         </style>
+</head>
+<h1>WELCOME TO COFFEE PLANTATIONS</h1>
+<body>
+    <div class="flex-container">
+        <div class="box">
+            <h2></h2>
+            
+            <img src="https://www.shutterstock.com/image-photo/cup-coffee-on-white-background-600nw-2502351599.jpg" alt="Hairstylist">
+
+            
+
+            <div class="container">
+                <div class="box">
+                    <h2>Arabica</h2>
+                    <img src="https://5.imimg.com/data5/SELLER/Default/2023/8/339013451/KN/BK/PP/45752229/arabica-coffee-beans-500x500.png" alt="Hairstylist">
+                    <p>Opening hours: 10 AM to 9 PM</p>
+                    <button onclick="location.href='https://www.google.com/maps/search/arabica+plantations+location/@17.5671693,78.308933,11z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D'">Location</button>
+                    <button onclick="location.href='reg.html'">Register</button>
+                    <button onclick="location.href='payment details.html'">payment details</button>
+                    <button onclick="location.href='logistics.html'">logistics details</button>
+                </div>
+            
+                <div class="box">
+                    <h2>Robusta</h2>
+                    <img src="https://5.imimg.com/data5/SELLER/Default/2023/9/341418751/EB/LA/JA/45122889/robusta-coffee-beans-500x500.jpg" alt="Barber">
+                    <p>Opening hours: 10 AM to 9 PM</p>
+                    <button onclick="location.href='https://www.google.com/maps/search/Robusta+plantations+in+india/@14.7825336,74.5461001,7z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D'">Location</button>
+                    <button onclick="location.href='reg.html'">Register</button>
+                    <button onclick="location.href='payment details.html'">payment details</button>
+                    <button onclick="location.href='logistics.html'">logistics details</button>
+                </div>
+            
+                <div class="box">
+                    <h2>Liberica</h2>
+                    <img src="https://cdn.shopify.com/s/files/1/0052/2420/2309/files/Liberica3_480x480.png?v=1669738277" alt="Makeup Artist">
+                    <p>Opening hours: 10 AM to 9 PM</p>
+                    <button onclick="location.href='https://www.google.com/maps/place/My+Liberica+Coffee+Plantation+%26+Processing+Mill+(advance+booking+is+required)/@1.7493703,103.3843575,17z/data=!3m1!4b1!4m6!3m5!1s0x31d087b6ad57042f:0xf2b75736902f9366!8m2!3d1.7493649!4d103.3869324!16s%2Fg%2F11g6hz4qkr?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D'">Location</button>
+                    <button onclick="location.href='reg.html'">Register</button>
+                    <button onclick="location.href='payment details.html'">payment details</button>
+                    <button onclick="location.href='logistics.html'">logistics details</button>
+                </div>
+            
+                <div class="box">
+                    <h2>Excelsa</h2>
+                        <img src="https://i.pinimg.com/originals/7f/40/95/7f409530e6eb1d5099451b3eaed96ed9.png" alt="Makeup Artist">
+                    <img src="https://www.google.com/maps/place/Excelsa+Cafe/@25.2419161,55.3570343,17z/data=!4m6!3m5!1s0x3e5f5de05820a7e1:0x3afc7153c69c5696!8m2!3d25.2419113!4d55.3596092!16s%2Fg%2F11y2sjk6jr?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D" alt="Pedicurist">
+                    <p>Opening hours: 10 AM to 9 PM</p>
+                    <button onclick="location.href=''">Location</button>
+                    <button onclick="location.href='reg.html'">Register</button>
+                    <button onclick="location.href='payment details.html'">payment details</button>
+                    <button onclick="location.href='logistics.html'">logistics details</button>
+                </div>
+            
+
+            </div>
+
+            
+            <p>timmings: 10 am to 7 pm</p>
+            
+            <button class="button" onclick="location.href='reg.html'">register</button>
+            <button onclick="location.href='payment details.html'">payment details</button>
+
+
+    
+</body>
+</html>
